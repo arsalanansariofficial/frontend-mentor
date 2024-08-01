@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Frontend Mentor | Product preview card component</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <main class="root">
+      <section class="product">
+        <header class="product_header">
+          <picture>
+            <source
+              media="(min-width: 40em)"
+              srcset="./assets/images/image-product-desktop.jpg"
+            />
+            <source
+              media="(min-width: 20em)"
+              srcset="./assets/images/image-product-mobile.jpg"
+            />
+            <img
+              src="./assets/images/image-product-desktop.jpg"
+              alt="Product Image"
+            />
+          </picture>
+        </header>
+        <div class="product_body">
+          <span class="category montserrat fw-500">Perfume</span>
+          <h1 class="name fraunces fw-700">Gabrielle Essence Eau De Parfum</h1>
+          <p class="description montserrat fw-500">
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </p>
+          <section class="price fraunces">
+            <span class="current fw-700">$149.99</span>
+            <span class="original fw-500">$169.99</span>
+          </section>
+          <button type="button">
+            <img src="./assets/images/icon-cart.svg" alt="Cart Icon" />
+            <span class="montserrat fw-700">Add to Cart</span>
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

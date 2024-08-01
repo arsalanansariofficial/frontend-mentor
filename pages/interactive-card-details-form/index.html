@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Frontend Mentor | Interactive card details form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+    <link rel="stylesheet" href="./main.css" />
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <main class="card">
+      <header class="card_header">
+        <div class="card_header--back">
+          <img src="./assets/images/bg-card-back.png" alt="Card Back" />
+          <span class="card-img-cvc">000</span>
+        </div>
+        <div class="card_header--front">
+          <img src="./assets/images/bg-card-front.png" alt="Card Front" />
+          <img
+            class="card-logo"
+            src="./assets/images/card-logo.svg"
+            alt="Card Logo"
+          />
+          <h1 class="card-img-number">0000 0000 0000 0000</h1>
+          <h2 class="card-img-name">gwen tennyson</h2>
+          <h2 class="card-img-date">
+            <span class="month">00</span>/<span class="year">00</span>
+          </h2>
+        </div>
+      </header>
+      <form class="card_form" novalidate>
+        <div class="form-control">
+          <label for="name">Cardholder Name</label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            maxlength="20"
+            placeholder="e.g. Gwen Tennyson"
+          />
+          <span class="name validation d-none">Can't be blank</span>
+        </div>
+        <div class="form-control">
+          <label for="number">card number</label>
+          <input
+            type="text"
+            name="number"
+            id="number"
+            maxlength="19"
+            placeholder="e.g. 1234 5678 9123 0000"
+          />
+          <span class="number validation d-none"
+            >Wrong format, numbers only</span
+          >
+        </div>
+        <div class="card_form--date-cvc">
+          <div class="card-date-validation">
+            <div class="card-date">
+              <div class="form-control">
+                <label for="month">exp. date</label>
+                <input type="number" name="month" id="month" placeholder="MM" />
+              </div>
+              <div class="form-control">
+                <label for="year">(mm/yy)</label>
+                <input type="number" name="year" id="year" placeholder="YY" />
+              </div>
+            </div>
+            <span class="date validation d-none">Can't be blank</span>
+          </div>
+          <div class="card-cvc form-control">
+            <label for="cvc">cvc</label>
+            <input type="number" name="cvc" id="cvc" placeholder="e.g. 123" />
+            <span class="cvc validation d-none">Can't be blank</span>
+          </div>
+        </div>
+        <button class="btn-primary" type="submit">confirm</button>
+      </form>
+    </main>
+  </body>
+</html>

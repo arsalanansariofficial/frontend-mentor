@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/png"
+    />
+    <title>Frontend Mentor | Results summary component</title>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <div class="root">
+      <main>
+        <section class="hero">
+          <h1 class="hero_title">Your Result</h1>
+          <div class="hero_result">
+            <h2 class="score">76</h2>
+            <span class="total">of 100</span>
+          </div>
+          <h3 class="hero_adjective">Great</h3>
+          <p class="hero_description">
+            You have scored higher than 65% of the people who have taken these
+            tests.
+          </p>
+        </section>
+        <section class="summary">
+          <h4 class="summary_title">Summary</h4>
+          <ul class="summary_points">
+            <li class="item">
+              <div class="item_left">
+                <div class="item_left--icon">
+                  <img
+                    src="./assets/images/icon-reaction.svg"
+                    alt="Reaction icon"
+                  />
+                </div>
+                <span class="item_left--title">Reaction</span>
+              </div>
+              <div class="item_right">
+                <span class="item_right--score">80 / </span>
+                <span class="item_right--total">100</span>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item_left">
+                <div class="item_left--icon">
+                  <img
+                    src="./assets/images/icon-memory.svg"
+                    alt="Memory icon"
+                  />
+                </div>
+                <span class="item_left--title">Memory</span>
+              </div>
+              <div class="item_right">
+                <span class="item_right--score">92 / </span>
+                <span class="item_right--total">100</span>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item_left">
+                <div class="item_left--icon">
+                  <img
+                    src="./assets/images/icon-verbal.svg"
+                    alt="Verbal icon"
+                  />
+                </div>
+                <span class="item_left--title">Verbal</span>
+              </div>
+              <div class="item_right">
+                <span class="item_right--score">61 / </span>
+                <span class="item_right--total">100</span>
+              </div>
+            </li>
+            <li class="item">
+              <div class="item_left">
+                <div class="item_left--icon">
+                  <img
+                    src="./assets/images/icon-visual.svg"
+                    alt="Visual icon"
+                  />
+                </div>
+                <span class="item_left--title">Visual</span>
+              </div>
+              <div class="item_right">
+                <span class="item_right--score">72 / </span>
+                <span class="item_right--total">100</span>
+              </div>
+            </li>
+          </ul>
+          <button class="btn-primary">Continue</button>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

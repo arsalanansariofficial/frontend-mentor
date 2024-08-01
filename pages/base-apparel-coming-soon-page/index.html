@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Frontend Mentor | Base Apparel</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="./assets/images/logo.svg" alt="Logo" />
+        <picture>
+          <source
+            media="(min-width: 55em)"
+            srcset="./assets/images/hero-desktop.jpg"
+          />
+          <source
+            media="(min-width: 20em)"
+            srcset="./assets/images/hero-mobile.jpg"
+          />
+          <img src="./assets/images/hero-desktop.jpg" alt="Hero Image" />
+        </picture>
+      </header>
+      <section class="hero">
+        <img class="hero_brand" src="./assets/images/logo.svg" alt="Logo" />
+        <h1 class="hero_title"><span>We're</span> coming soon</h1>
+        <p class="hero_description">
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+        <form class="hero_form" novalidate>
+          <div class="form-control">
+            <input type="email" name="email" placeholder="Email Address" />
+            <img
+              class="d-none"
+              src="./assets/images/icon-error.svg"
+              alt="Error Icon"
+            />
+            <span class="d-none">Please enter a valid email</span>
+            <button type="submit" title="Submit Button">
+              <img src="./assets/images/icon-arrow.svg" alt="Arrow Icon" />
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

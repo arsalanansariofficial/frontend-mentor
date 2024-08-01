@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* neutral */
+  --Dark-gray: hsl(0, 0%, 59%);
+
+  /* primary */
+  --Dark-cyan: hsl(185, 75%, 39%);
+  --Very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --Dark-grayish-blue: hsl(227, 10%, 46%);
+
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 1.125rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  background: var(--Dark-cyan);
+  padding-inline: 1em;
+  min-height: 100vh;
+  align-content: center;
+  position: relative;
+  overflow: clip;
+
+  & > .bg-top,
+  & > .bg-bottom {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
+
+  & > .bg-top {
+    transform: translateX(-50%) translateY(-50%);
+
+    @media (min-width: 40em) {
+      transform: translateX(-25%) translateY(-50%);
+    }
+  }
+
+  & > .bg-bottom {
+    transform: translateX(50%) translateY(50%);
+
+    @media (min-width: 40em) {
+      transform: translateX(100%) translateY(50%);
+    }
+  }
+}
+
+.profile {
+  border-radius: 0.7em;
+  text-align: center;
+  margin-inline: auto;
+  max-width: 20em;
+  overflow: clip;
+  z-index: 1;
+  position: relative;
+  scale: 0;
+  animation: appear 500ms ease-in-out forwards;
+}
+
+.profile_header {
+  min-height: 7em;
+  background: url('./assets/images/bg-pattern-card.svg');
+  align-content: center;
+
+  & > img {
+    border: 5px solid white;
+    border-radius: 100%;
+    margin-inline: auto;
+    transform: translateY(50%);
+  }
+}
+
+.profile_body {
+  background: white;
+  padding-top: 5em;
+}
+
+.name {
+  font-size: inherit;
+  font-weight: 700;
+
+  & > span {
+    color: var(--Dark-grayish-blue);
+    font-weight: 400;
+  }
+}
+
+.place {
+  color: var(--Dark-grayish-blue);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0.3em;
+}
+
+.stats {
+  border-top: 1px solid var(--Dark-gray);
+  padding: 1.5em;
+  margin-top: 2.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat_title {
+  font: inherit;
+  font-weight: 700;
+}
+
+.stat_subtitle {
+  margin-top: 0.3em;
+  color: var(--Dark-grayish-blue);
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+
+@keyframes appear {
+  0% {
+    scale: 0;
+  }
+  50% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
+  }
+}

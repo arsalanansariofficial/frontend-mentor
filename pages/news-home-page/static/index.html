@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | News Homepage</title>
+    <link rel="icon" type="img/png" href="./public/images/favicon.png" />
+    <link rel="stylesheet" href="./public/lib/globals.css" />
+    <script src="./main.js" defer></script>
+    <script src="./public/data/details.js"></script>
+    <script src="./public/data/articles.js"></script>
+  </head>
+  <body class="min-h-screen bg-background font-sans antialiased">
+    <div id="root" class="root p-4 md:px-16 md:py-8">
+      <template id="detail-item">
+        <li
+          key="{index}"
+          class="list-item space-y-2 border-b border-dark-grayish-blue pb-4 last:border-b-0"
+        >
+          <h4
+            class="item_title cursor-pointer text-sm font-bold text-off-white hover:text-soft-orange"
+          ></h4>
+          <p class="item_subtitle text-xs text-grayish-blue"></p>
+        </li>
+      </template>
+      <template id="article-item">
+        <li class="list_item relative flex gap-4">
+          <img
+            sizes="(max-width: 640px) 100px, 100px"
+            class="item_image !static block !h-auto max-w-16 basis-full"
+          />
+          <div class="item_feature space-y-2">
+            <h3 class="feature_serial text-xl font-bold text-soft-red">
+              {article.serial}
+            </h3>
+            <h4 class="feature_title text-xs font-bold"></h4>
+            <p
+              class="feature_subtitle text-pretty text-[0.55rem] text-dark-grayish-blue"
+            ></p>
+          </div>
+        </li>
+      </template>
+      <header class="header flex items-center justify-between">
+        <h1 class="text-3xl">
+          <a
+            href="./"
+            class="header_brand font-serif text-3xl font-bold hover:text-soft-red"
+            >W.</a
+          >
+        </h1>
+        <ul class="nav_links hidden md:flex md:gap-4">
+          <li class="nav_link">
+            <a class="hover:text-soft-red" href="/">Home</a>
+          </li>
+          <li class="nav_link">
+            <a class="hover:text-soft-red" href="#New">New</a>
+          </li>
+          <li class="nav_link">
+            <a class="hover:text-soft-red" href="#Popular">Popular</a>
+          </li>
+          <li class="nav_link">
+            <a class="hover:text-soft-red" href="#Trending">Trending</a>
+          </li>
+          <li class="nav_link">
+            <a class="hover:text-soft-red" href="#Categories">Categories</a>
+          </li>
+        </ul>
+        <button class="header_menu-btn md:hidden" onClick="openAside()">
+          <img src="./public/images/icon-menu.svg" alt="Menu Icon" />
+        </button>
+        <aside
+          class="header_aside fixed inset-0 left-full z-10 bg-sky-500/50 backdrop-blur md:hidden"
+        >
+          <button
+            class="absolute right-0 top-0 m-4 ms-auto block"
+            onClick="closeAside()"
+          >
+            <img
+              src="./public/images/icon-menu-close.svg"
+              alt="Close Menu Icon"
+            />
+          </button>
+          <ul class="nav_links flex h-full flex-col">
+            <li class="nav_link flex grow text-off-white">
+              <a
+                class="font grow content-center border-b-4 border-very-dark-blue/30 text-center font-mono text-3xl font-bold hover:bg-very-dark-blue/30 hover:text-soft-orange"
+                href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav_link flex grow text-off-white">
+              <a
+                class="font grow content-center border-b-4 border-very-dark-blue/30 text-center font-mono text-3xl font-bold hover:bg-very-dark-blue/30 hover:text-soft-orange"
+                href="./index.html"
+                >New</a
+              >
+            </li>
+            <li class="nav_link flex grow text-off-white">
+              <a
+                class="font grow content-center border-b-4 border-very-dark-blue/30 text-center font-mono text-3xl font-bold hover:bg-very-dark-blue/30 hover:text-soft-orange"
+                href="./index.html"
+                >Popular</a
+              >
+            </li>
+            <li class="nav_link flex grow text-off-white">
+              <a
+                class="font grow content-center border-b-4 border-very-dark-blue/30 text-center font-mono text-3xl font-bold hover:bg-very-dark-blue/30 hover:text-soft-orange"
+                href="./index.html"
+                >Trending</a
+              >
+            </li>
+          </ul>
+        </aside>
+      </header>
+      <main class="main space-y-12 py-4">
+        <section class="space-y-8 md:flex md:gap-8 md:space-y-0">
+          <div class="hero space-y-4 md:space-y-8">
+            <picture class="hero_picture">
+              <source
+                srcset="./public/images/image-web-3-mobile.jpg"
+                media="(max-width: 640px)"
+              />
+              <source
+                srcset="./public/images/image-web-3-desktop.jpg"
+                media="(min-width: 640px)"
+              />
+              <img
+                src="./public/images/image-web-3-mobile.jpg"
+                alt="Image of Web 3.0"
+              />
+            </picture>
+            <div class="hero_container space-y-4 md:flex md:gap-8 md:space-y-0">
+              <h2 class="hero_title text-4xl font-bold">
+                The Bright Future of Web 3.0?
+              </h2>
+
+              <div
+                class="container_cta space-y-4 md:flex md:flex-col md:items-start md:justify-between"
+              >
+                <p
+                  class="hero_description text-xs text-dark-grayish-blue md:w-10/12 md:text-base"
+                >
+                  We dive into the next evolution of the web that claims to put
+                  the power of the platforms back into the hands of the people.
+                  But is it really fulfilling its promise?
+                </p>
+
+                <button
+                  class="hero_cta bg-soft-red px-8 py-4 font-semibold uppercase tracking-widest text-very-dark-blue hover:bg-very-dark-blue hover:text-off-white"
+                >
+                  Read More
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="details mb-4 bg-very-dark-blue p-4">
+            <h3 class="details_title text-xl font-bold text-soft-orange">
+              New
+            </h3>
+            <ul id="details_list" class="details_list space-y-8 pt-4"></ul>
+          </div>
+        </section>
+        <section class="articles">
+          <ul
+            id="articles_list"
+            class="articles_list space-y-8 md:flex md:gap-4 md:space-y-0"
+          ></ul>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

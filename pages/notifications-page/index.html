@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Frontend Mentor | Notifications Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+    <link rel="stylesheet" href="./main.css" />
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <main class="notifications">
+      <header class="notifications_header">
+        <h1 class="header_title">Notifications</h1>
+        <span class="header_notification">3</span>
+        <a href="#" class="link-secondary">Mark all as read</a>
+      </header>
+      <ul class="notifications_list">
+        <li class="notification new">
+          <img
+            src="./assets/images/katline-snow.jpg"
+            alt="User Profile"
+            class="notifier-image"
+          />
+          <div class="notification_main">
+            <h2 class="notifier-name">Katline Snow</h2>
+            reacted to your recent post
+            <span class="notified-about">My first tournament today! </span>
+            <span class="notification-new"></span>
+            <p class="notification-time">1m ago</p>
+          </div>
+        </li>
+        <li class="notification new">
+          <img
+            src="./assets/images/gwen-tennyson.jpg"
+            alt="User Profile"
+            class="notifier-image"
+          />
+          <div class="notification_main">
+            <h2 class="notifier-name">Gwen Tennyson</h2>
+            followed you
+            <span class="notification-new"></span>
+            <p class="notification-time">5m ago</p>
+          </div>
+        </li>
+        <li class="notification new">
+          <img
+            src="./assets/images/charm-caster.jpg"
+            alt="User Profile"
+            class="notifier-image"
+          />
+          <div class="notification_main">
+            <h2 class="notifier-name">Charm Caster</h2>
+            has joined your group
+            <span class="notified-about blue">Chess Club</span>
+            <span class="notification-new"></span>
+            <p class="notification-time">1 day ago</p>
+          </div>
+        </li>
+        <li class="notification">
+          <img
+            src="./assets/images/frost-snow.jpg"
+            alt="User Profile"
+            class="notifier-image"
+          />
+          <div class="notification_main">
+            <h2 class="notifier-name">Frost Snow</h2>
+            sent you a private message
+            <p class="notification-time">5 days ago</p>
+            <div class="message-box">
+              Hello, thanks for setting up the Chess Club. I've been a member
+              few weeks now and I'm already having lots of fun and improving my
+              game.
+            </div>
+          </div>
+        </li>
+        <li class="notification">
+          <img
+            src="./assets/images/teagan-croft.jpg"
+            alt="User Profile"
+            class="notifier-image"
+          />
+          <div class="notification_main">
+            <h2 class="notifier-name">Teagan Croft</h2>
+            commented on your picture
+            <p class="notification-time">1 week ago</p>
+            <div class="message-box d-none">Great work, keep it up 🎉</div>
+          </div>
+          <img
+            class="notification_secondary"
+            src="./assets/images/image-chess.webp"
+            alt="Image that contains notification subject"
+          />
+        </li>
+        <li class="notification">
+          <img
+            src="./assets/images/hailey-stienfield.jpg"
+            alt="User Profile"
+            class="notifier-image"
+          />
+          <div class="notification_main">
+            <h2 class="notifier-name">Hailey Stienfield</h2>
+            reacted to your recent post
+            <span class="notified-about"
+              >5 end-game strategies to increase your win rate</span
+            >
+            <p class="notification-time">2 weeks ago</p>
+          </div>
+        </li>
+        <li class="notification">
+          <img
+            src="./assets/images/evangeline-lily.jpg"
+            alt="User Profile"
+            class="notifier-image"
+          />
+          <div class="notification_main">
+            <h2 class="notifier-name">Evangeline Lily</h2>
+            left the group
+            <span class="notified-about blue">Chess Club</span>
+            <p class="notification-time">2 weeks ago</p>
+          </div>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

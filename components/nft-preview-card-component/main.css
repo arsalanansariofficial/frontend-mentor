@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* primary */
+  --Cyan: hsl(178, 100%, 50%);
+  --View: hsla(178, 100%, 50%, 0.3);
+  --Soft-blue: hsl(215, 51%, 70%);
+
+  /* neutral */
+  --White: hsl(0, 0%, 100%);
+  --main: hsl(217, 54%, 11%);
+  --card: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+
+  font-family: 'Outfit', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+main {
+  background: var(--main);
+  min-height: 100vh;
+  align-content: center;
+  padding-inline: 1.5em;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 1em;
+  max-width: 18.75em;
+  margin-inline: auto;
+  padding: 1.5em;
+  scale: 0;
+  animation: appear 0.5s ease-in-out forwards;
+}
+
+.card_image {
+  border-radius: 0.5em;
+  aspect-ratio: 1/1;
+  overflow: clip;
+  position: relative;
+  cursor: pointer;
+
+  & > * {
+    position: absolute;
+    inset: 0;
+  }
+
+  & > div {
+    background: transparent;
+    align-content: center;
+    scale: 0;
+    z-index: -1;
+    transition: scale 0.5s cubic-bezier(0.42, 0, 0.14, 1.64),
+      background 0.5s cubic-bezier(0.42, 0, 0.14, 1.64),
+      z-index 0.5s cubic-bezier(0.42, 0, 0.14, 1.64);
+  }
+
+  & > div > img {
+    margin-inline: auto;
+  }
+
+  &:hover > div {
+    background: var(--View);
+    scale: 1;
+    z-index: 1;
+  }
+}
+
+.card_details,
+.details_left,
+.details_right,
+.card_author {
+  display: flex;
+  align-items: center;
+}
+
+.card_title {
+  color: var(--White);
+  margin-top: 1em;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card_description {
+  color: var(--Soft-blue);
+  font-weight: 300;
+  font-size: 1rem;
+  margin-top: 0.7em;
+}
+
+.card_details {
+  margin-top: 1em;
+  justify-content: space-between;
+}
+
+.details_left {
+  gap: 0.5em;
+  color: var(--White);
+}
+
+.details_right {
+  gap: 0.3em;
+  color: var(--Soft-blue);
+}
+
+.card_seprator {
+  background: var(--line);
+  border: none;
+  margin-top: 1em;
+  height: 2px;
+}
+
+.card_author {
+  color: var(--Soft-blue);
+  margin-top: 0.5em;
+  gap: 1em;
+
+  & > img {
+    border: 1.5px solid var(--Cyan);
+    border-radius: 100%;
+    max-width: 2em;
+    aspect-ratio: 1/1;
+  }
+
+  & > p {
+    font-weight: 300;
+  }
+
+  & > p > a {
+    font-weight: 400;
+    color: var(--Cyan);
+    text-decoration: none;
+  }
+}
+
+@keyframes appear {
+  0% {
+    scale: 0;
+  }
+  50% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
+  }
+}

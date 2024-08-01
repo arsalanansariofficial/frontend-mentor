@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .header_aside {
+    --transition-duration_aside: 150ms;
+    transition: left var(--transition-duration_aside) ease-in-out;
+  }
+
+  .header_aside.open {
+    @apply left-1/3;
+  }
+}

@@ -1,0 +1,165 @@
+@font-face {
+  font-family: 'Young Serif';
+  src: url('../../assets/fonts/young-serif/YoungSerif-Regular.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('../../assets/fonts/outfit/Outfit-VariableFont_wght.ttf')
+    format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  --Nutmeg: hsl(14, 45%, 36%);
+  --Dark-Raspberry: hsl(332, 51%, 32%);
+
+  --White: hsl(0, 0%, 100%);
+  --Rose-White: hsl(330, 100%, 98%);
+  --Eggshell: hsl(30, 54%, 90%);
+  --Light-Grey: hsl(30, 18%, 87%);
+  --Wenge-Brown: hsl(30, 10%, 34%);
+  --Dark-Charcoal: hsl(24, 5%, 18%);
+
+  @media (min-width: 40em) {
+    background: var(--Light-Grey);
+    padding: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  font-size: 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.root {
+  @media (min-width: 40em) {
+    background: var(--White);
+    border-radius: 0.5em;
+    padding: 1.5em;
+    width: 70%;
+  }
+}
+
+.hero-image > img {
+  @media (min-width: 40em) {
+    border-radius: 0.5em;
+  }
+}
+
+.hero-recipe {
+  @media (min-width: 40em) {
+    margin: 1.5em 0 1.5em;
+  }
+
+  margin: 1.5em;
+
+  & > .title,
+  & > .description,
+  & > .recipe-details {
+    font-family: 'Outfit', sans-serif;
+    margin-top: 1em;
+  }
+
+  & > .description {
+    color: var(--Nutmeg);
+  }
+
+  & > .recipe-details {
+    color: var(--Dark-Charcoal);
+    background: var(--Rose-White);
+    border-radius: 0.5rem;
+    padding: 1em;
+
+    & > .recipe-details_list {
+      margin-top: 1.5em;
+      margin-left: 2em;
+
+      span {
+        font-weight: bold;
+      }
+
+      li:not(span) {
+        color: var(--Nutmeg);
+        margin-top: 0.5em;
+      }
+    }
+  }
+}
+
+.ingredients,
+.instructions,
+.nutrition {
+  @media (min-width: 40em) {
+    margin: 0 0 1.5em;
+  }
+
+  color: var(--Nutmeg);
+  border-bottom: 1px solid var(--Nutmeg);
+  font-family: 'Young Serif', sans-serif;
+  margin: 0 1.5em 1.5em;
+  padding-bottom: 1.5em;
+
+  & > .ingredients_list,
+  & > .instructions_list {
+    font-family: 'Outfit', sans-serif;
+    margin-left: 2em;
+
+    & > li {
+      margin-top: 1em;
+    }
+  }
+}
+
+.instructions {
+  .ins-header {
+    font-weight: bold;
+  }
+}
+
+.nutrition {
+  border: none;
+  padding: 0;
+
+  & > .description,
+  & > .nutrition_chart {
+    font-family: 'Outfit', sans-serif;
+    margin-top: 1em;
+  }
+
+  & > .nutrition_chart {
+    & > .chart-items {
+      border-bottom: 1px solid var(--Nutmeg);
+      padding: 1em 5em 1em 1.5em;
+      gap: 1em;
+      display: flex;
+      justify-content: space-between;
+
+      & > .quantity {
+        min-width: 5em;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+footer {
+  font-family: 'Outfit', sans-serif;
+  text-align: center;
+  margin: 1.5em 0;
+
+  & > a {
+    font: inherit;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,611 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* neutral */
+  --White: hsl(0, 0%, 100%);
+  --Cool-gray: hsl(231, 11%, 63%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Light-gray: hsl(229, 24%, 87%);
+  --Alabaster: hsl(231, 100%, 99%);
+
+  /* primary */
+  --Light-blue: hsl(206, 94%, 87%);
+  --Marine-blue: hsl(213, 96%, 18%);
+  --Pastel-blue: hsl(228, 100%, 84%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+  --Strawberry-red: hsl(354, 84%, 57%);
+
+  /* fw */
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+
+  font-family: 'Ubuntu', sans-serif;
+
+  @media (min-width: 40em) {
+    background: var(--Magnolia);
+    min-height: 100vh;
+    align-content: center;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  background: var(--Magnolia);
+  padding-bottom: 3em;
+  min-height: 100vh;
+  position: relative;
+
+  @media (min-width: 40em) {
+    background: var(--White);
+    border-radius: 0.5em;
+    padding-bottom: 0;
+    margin-inline: auto;
+    max-width: 40em;
+    min-height: initial;
+    display: flex;
+    overflow: clip;
+  }
+}
+
+header {
+  background: url('./assets/images/bg-sidebar-mobile.svg') no-repeat
+    center/cover;
+  padding: 2em 0 0 0;
+  min-height: 8.5em;
+
+  @media (min-width: 40em) {
+    background: url('./assets/images/bg-sidebar-desktop.svg') no-repeat
+      center/cover;
+    border-radius: 0.5em;
+    margin: 0.7em;
+    padding: 2em 1em;
+    min-width: 12em;
+    max-height: 100%;
+  }
+}
+
+section {
+  @media (min-width: 40em) {
+    flex-grow: 1;
+  }
+}
+
+label {
+  color: var(--Marine-blue);
+  font-weight: var(--fw-500);
+
+  @media (min-width: 40em) {
+    font-size: 0.75rem;
+  }
+}
+
+.step-name,
+.step-description {
+  text-transform: uppercase;
+  font-weight: var(--fw-500);
+  font-size: 0.75rem;
+}
+
+.step-name {
+  color: var(--Cool-gray);
+  display: none;
+
+  @media (min-width: 40em) {
+    display: block;
+  }
+}
+
+.step-description {
+  color: var(--White);
+  display: none;
+
+  @media (min-width: 40em) {
+    display: block;
+  }
+}
+
+input {
+  border: none;
+  outline: 1px solid var(--Light-gray);
+  border-radius: 0.3em;
+  font: inherit;
+  font-weight: var(--fw-500);
+  padding: 0.5em 1em;
+
+  &::placeholder {
+    color: var(--Cool-gray);
+  }
+
+  &:focus-visible {
+    outline: 1px solid var(--Purplish-blue);
+  }
+
+  &.invalid {
+    outline: 1px solid var(--Strawberry-red);
+  }
+
+  @media (min-width: 40em) {
+    font-size: 0.75rem;
+    padding: 0.75em 1em;
+  }
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.form-steps {
+  gap: 1em;
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: 40em) {
+    flex-direction: column;
+  }
+}
+
+.form-steps > li {
+  @media (min-width: 40em) {
+    gap: 0.7em;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.step {
+  color: var(--White);
+  border: 1px solid var(--White);
+  text-align: center;
+  align-content: center;
+  border-radius: 100%;
+  font-weight: var(--fw-700);
+  padding: 0.3em 0.7em;
+  aspect-ratio: 1/1;
+
+  @media (min-width: 40em) {
+    max-width: 2em;
+    font-size: 0.85rem;
+  }
+}
+
+.step.active {
+  color: var(--Marine-blue);
+  background: var(--White);
+}
+
+.form-step {
+  background: var(--White);
+  border-radius: 0.5em;
+  padding: 2em 1em 2em;
+  margin-inline: auto;
+  max-width: 20em;
+  translate: 0 -3.5em;
+
+  @media (min-width: 40em) {
+    border-radius: 0;
+    padding: 2em 3em;
+    max-width: none;
+    translate: 0 0;
+  }
+}
+
+.form-title {
+  color: var(--Marine-blue);
+  font-weight: var(--fw-700);
+}
+
+.form-description {
+  color: var(--Cool-gray);
+  font-size: 1rem;
+  margin-top: 0.5em;
+
+  @media (min-width: 40em) {
+    font-size: 0.75rem;
+  }
+}
+
+#step-1 {
+  margin-top: 1em;
+
+  @media (min-width: 40em) {
+    margin-top: 1.5em;
+  }
+}
+
+.form-control {
+  gap: 0.25em;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  & > .validation {
+    color: var(--Strawberry-red);
+    font-weight: var(--fw-500);
+    font-size: 0.85rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.form-actions {
+  background: var(--White);
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  @media (min-width: 40em) {
+    padding: 0;
+    margin: 1em 3em 1em;
+    position: static;
+  }
+}
+
+.btn-primary,
+.btn-secondary {
+  color: var(--White);
+  border-radius: 0.25em;
+  background: var(--Marine-blue);
+  border: none;
+  font: inherit;
+  font-weight: var(--fw-400);
+  padding: 0.7em 1em;
+  cursor: pointer;
+
+  @media (min-width: 40em) {
+    font-size: 0.75rem;
+  }
+}
+
+.btn-primary {
+  margin-left: auto;
+}
+
+.btn-secondary {
+  background: none;
+  color: var(--Cool-gray);
+  font-weight: var(--fw-700);
+  padding: 0;
+}
+
+#step-2 {
+  @media (min-width: 40em) {
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+#step-2:has(.rental > input:checked) .plan-price-yearly,
+#step-2:has(.rental > input:checked) .plan-bonus {
+  display: block;
+}
+
+#step-2:has(.rental > input:checked) .plan-price {
+  display: none;
+}
+
+.plan {
+  border: 1px solid var(--Cool-gray);
+  border-radius: 0.5em;
+  padding: 0.75em;
+  margin-top: 1em;
+  gap: 1em;
+  display: flex;
+  position: relative;
+
+  &:has(input:checked) {
+    border: 2px solid var(--Purplish-blue);
+    background: var(--Magnolia);
+  }
+
+  & > .plan_icon {
+    max-width: 1.7em;
+  }
+
+  @media (min-width: 40em) {
+    margin-top: 0;
+    padding-block: 1em;
+    max-width: 6.5em;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+}
+
+.plan-label {
+  color: var(--Marine-blue);
+  font-size: 1.125rem;
+  font-weight: var(--fw-500);
+
+  @media (min-width: 40em) {
+    font-size: 0.8rem;
+    margin-top: auto;
+  }
+}
+
+.plan-price,
+.plan-price-yearly {
+  color: var(--Cool-gray);
+  font-weight: var(--fw-500);
+  margin-top: 0.25em;
+
+  @media (min-width: 40em) {
+    font-size: 0.75rem;
+    margin-top: 0;
+  }
+}
+
+.plan-price-yearly {
+  display: none;
+}
+
+.plan-bonus {
+  color: var(--Marine-blue);
+  font-size: 0.75rem;
+  font-weight: var(--fw-500);
+  margin-top: 0.25em;
+  display: none;
+
+  @media (min-width: 40em) {
+    font-size: 0.5rem;
+  }
+}
+
+.rental {
+  background: var(--Magnolia);
+  border-radius: 0.5em;
+  gap: 1.5em;
+  padding: 1em;
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &:has(input:checked) > .monthly {
+    color: var(--Cool-gray);
+  }
+
+  &:has(input:checked) > .yearly {
+    color: var(--Marine-blue);
+  }
+
+  &:has(input:checked) > .switch {
+    justify-content: flex-end;
+  }
+
+  @media (min-width: 40em) {
+    font-size: 0.75rem;
+    flex-grow: 1;
+  }
+}
+
+.monthly,
+.yearly {
+  font-weight: var(--fw-500);
+}
+
+.monthly {
+  color: var(--Marine-blue);
+}
+
+.yearly {
+  color: var(--Cool-gray);
+}
+
+.switch {
+  background: var(--Marine-blue);
+  border-radius: 5em;
+  padding: 0.25em;
+  width: 3em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.toggle {
+  background: var(--White);
+  border-radius: 100%;
+  display: block;
+  width: 1em;
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+
+.add-on {
+  margin-top: 0.5em;
+  gap: 1em;
+  display: flex;
+  align-items: center;
+
+  & > input[type='checkbox'] {
+    border-radius: 5px;
+    padding: 0;
+    min-width: 1.25em;
+    display: block;
+    position: static;
+    opacity: 1;
+    aspect-ratio: 1/1;
+  }
+
+  @media (min-width: 40em) {
+    max-width: none;
+    flex-direction: row;
+  }
+}
+
+#step-3 {
+  @media (min-width: 40em) {
+    margin-top: 1em;
+  }
+}
+
+.form-step.step-2:has(.rental > input:checked) + .form-step.step-3 .add-on {
+  & > .add-on-price {
+    display: none;
+  }
+
+  & > .add-on-price-yearly {
+    display: block;
+  }
+}
+
+#step-4 {
+  & > .details {
+    border-radius: 0.5em;
+    background: var(--Magnolia);
+    overflow: clip;
+  }
+}
+
+.add-on-label,
+.add-on-description,
+.add-on-price,
+.add-on-price-yearly {
+  font-size: 0.7rem;
+  font-weight: var(--fw-500);
+}
+
+.add-on-label {
+  color: var(--Marine-blue);
+  font-size: 0.85rem;
+  text-transform: capitalize;
+
+  @media (min-width: 40em) {
+    font-size: 0.75rem;
+  }
+}
+
+.add-on > .add-on-price,
+.add-on > .add-on-price-yearly {
+  margin-left: auto;
+}
+
+.add-on-price-yearly {
+  display: none;
+}
+
+.plan-details,
+.add-ons-list > .plan.add-on {
+  background: var(--Magnolia);
+  border: none;
+}
+
+.plan-details .add-on-description {
+  font-size: 0.85rem;
+  text-decoration: underline;
+  display: block;
+  margin-top: 0.25em;
+}
+
+.add-on-price,
+.add-on-price-yearly {
+  color: var(--Marine-blue);
+  font-weight: var(--fw-700);
+}
+
+.add-ons-separator {
+  color: var(--Cool-gray);
+  margin-inline: 1em;
+}
+
+.add-ons-list {
+  & > .plan.add-on {
+    border-radius: 0;
+    margin-top: 0;
+    padding: 0 1em;
+  }
+
+  & > .plan.add-on > .plan-label {
+    color: var(--Cool-gray);
+    font-size: 0.75rem;
+  }
+
+  & > .plan.add-on > .add-on-price {
+    color: var(--Marine-blue);
+    font-weight: var(--fw-500);
+  }
+
+  & > .plan.add-on:first-of-type {
+    padding: 1em 1em 0;
+  }
+
+  & > .plan.add-on:last-of-type {
+    padding: 0 1em 1em;
+  }
+}
+
+.plan-total {
+  border: none;
+
+  & > .add-on-label {
+    color: var(--Cool-gray);
+    font-size: 0.85rem;
+  }
+
+  & > .add-on-price {
+    color: var(--Purplish-blue);
+    font-size: 1rem;
+  }
+}
+
+.form-step.step-5 {
+  text-align: center;
+
+  @media (min-width: 40em) {
+    padding-block: 5em;
+  }
+}
+
+.confirmation-icon {
+  border-radius: 100%;
+  margin-inline: auto;
+  max-width: 3em;
+  aspect-ratio: 1/1;
+}
+
+.confirmation-title {
+  color: var(--Marine-blue);
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+
+.confirmation-description {
+  color: var(--Cool-gray);
+  margin: 1rem auto 0;
+}

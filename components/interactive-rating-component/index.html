@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Frontend Mentor | Interactive rating component</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+    <link rel="stylesheet" href="./main.css" />
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="rating">
+        <img src="./assets/images/icon-star.svg" alt="Star Icon" />
+        <h1 class="rating_question">How did we do?</h1>
+        <p class="rating_description">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <ul class="rating_points">
+          <li class="point"><span>1</span></li>
+          <li class="point"><span>2</span></li>
+          <li class="point"><span>3</span></li>
+          <li class="point"><span>4</span></li>
+          <li class="point"><span>5</span></li>
+        </ul>
+        <button type="button">Submit</button>
+      </section>
+      <section class="feedback d-none">
+        <img
+          src="./assets/images/illustration-thank-you.svg"
+          alt="Mobile Icon"
+        />
+        <p class="feedback_rating">You selected <span>4</span> out of 5</p>
+        <h1 class="feedback_title">Thank you!</h1>
+        <p class="feedback_description">
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don't hesitate to get in touch!
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

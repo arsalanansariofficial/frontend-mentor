@@ -1,0 +1,241 @@
+@font-face {
+  font-family: 'Hanken Grotesk';
+  src: url('./assets/fonts/HankenGrotesk.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* primary */
+  --Light-red: hsl(0, 100%, 67%);
+  --Orangey-yellow: hsl(39, 100%, 56%);
+  --Green-teal: hsl(166, 100%, 37%);
+  --Cobalt-blue: hsl(234, 85%, 45%);
+
+  /* gradients */
+  --Light-slate: hsl(252, 100%, 67%);
+  --Light-royal: hsl(241, 81%, 54%);
+  --Violet-blue: hsla(256, 72%, 46%, 0.3);
+  --Persian-blue: hsla(241, 72%, 46%, 1);
+
+  /* neutral */
+  --White: hsl(0, 0%, 100%);
+  --Pale-blue: hsl(221, 100%, 96%);
+  --Light-lavender: hsl(241, 100%, 89%);
+  --Dark-gray-blue: hsl(224, 30%, 27%);
+
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 1.125rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.root {
+  @media (min-width: 40em) {
+    padding: 3em;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+main {
+  @media (min-width: 40em) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.hero {
+  color: var(--White);
+  background: var(--Light-slate);
+  border-radius: 0 0 3em 3em;
+  text-align: center;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  align-items: center;
+
+  @media (min-width: 40em) {
+    border-radius: 1em;
+    padding-block: 0;
+    justify-content: center;
+    transform: translateX(1.5em);
+    width: 15em;
+    z-index: 1;
+  }
+}
+
+.hero_title {
+  color: var(--Light-lavender);
+  font-size: 1.17rem;
+}
+
+.hero_result {
+  background: var(--Violet-blue);
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+  margin-block: 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > .score {
+    font-size: 1.17rem;
+    font-weight: bolder;
+
+    @media (min-width: 40em) {
+      font-size: 3.5em;
+      line-height: 1;
+    }
+  }
+
+  & > .total {
+    color: var(--Light-lavender);
+
+    @media (min-width: 40em) {
+      line-height: 1;
+    }
+  }
+
+  @media (min-width: 40em) {
+    margin: 0;
+    padding: 1.5em;
+  }
+}
+
+.hero_description {
+  color: var(--Light-lavender);
+  margin-block: 1em;
+
+  @media (min-width: 40em) {
+    margin: 0;
+  }
+}
+
+.summary {
+  padding: 1.5em;
+
+  @media (min-width: 40em) {
+    border-radius: 0 1em 1em 0;
+    box-shadow: 2px 2px 25px var(--Light-lavender);
+    backdrop-filter: blur(16px) saturate(180%);
+    padding-left: 4em;
+    width: 17em;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translateX(-1.5em);
+  }
+}
+
+.summary_title {
+  color: var(--Cobalt-blue);
+}
+
+.summary_points {
+  margin-block: 1em;
+  list-style-type: none;
+
+  & > .item {
+    border-radius: 0.5em;
+    margin-block: 1em;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: 40em) {
+      margin-block: 0;
+      padding: 0.5em;
+      line-height: 1;
+      gap: 0.5em;
+    }
+  }
+
+  .item:nth-of-type(1) {
+    background: rgba(255, 176, 31, 0.1);
+
+    & > .item_left {
+      color: rgb(90, 4, 8);
+    }
+  }
+
+  .item:nth-of-type(2) {
+    background: rgba(255, 105, 31, 0.1);
+
+    & > .item_left {
+      color: rgb(134, 91, 10);
+    }
+  }
+
+  .item:nth-of-type(3) {
+    background: rgba(140, 115, 115, 0.1);
+
+    & > .item_left {
+      color: rgb(15, 80, 64);
+    }
+  }
+
+  .item:nth-of-type(4) {
+    background: rgba(200, 199, 255, 0.2);
+
+    & > .item_left {
+      color: rgb(13, 28, 160);
+    }
+  }
+
+  @media (min-width: 40em) {
+    margin-block: 1em;
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.item_left {
+  gap: 0.5em;
+  display: flex;
+  align-items: center;
+}
+
+.item_left--icon {
+  height: 1em;
+
+  & > img {
+    min-width: 1em;
+    height: 100%;
+  }
+}
+
+.item_right--score {
+  color: var(--Dark-gray-blue);
+  font-weight: bolder;
+}
+
+.btn-primary {
+  color: var(--White);
+  background: var(--Dark-gray-blue);
+  border: none;
+  border-radius: 2em;
+  font-size: inherit;
+  font-weight: bold;
+  padding: 1em 2em;
+  width: 100%;
+  display: block;
+
+  @media (min-width: 40em) {
+    padding: 0.5em 1em;
+  }
+}

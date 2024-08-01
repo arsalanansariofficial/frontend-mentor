@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* neutral */
+  --Cream: hsl(27, 66%, 92%);
+  --Dark-brown: hsl(25, 47%, 15%);
+  --Medium-brown: hsl(28, 10%, 53%);
+  --Very-pale-orange: hsl(33, 100%, 98%);
+
+  /* primary */
+  --Cyan: hsl(186, 34%, 60%);
+  --Soft-red: hsl(10, 79%, 65%);
+
+  /* fw */
+  --fw-400: 400;
+  --fw-700: 700;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+ul {
+  list-style-type: none;
+}
+
+main {
+  background: var(--Cream);
+}
+
+.active {
+  background: var(--Cyan) !important;
+}
+
+section.chart {
+  min-width: 18em;
+  max-width: 25em;
+}
+
+.chart_header {
+  color: var(--Very-pale-orange);
+  background: var(--Soft-red);
+  border-radius: 0.5em;
+
+  .left_balance {
+    font-size: 1.7rem;
+    font-weight: var(--fw-700);
+  }
+}
+
+.chart_main {
+  background: var(--Very-pale-orange);
+  border-radius: 0.5em;
+  padding: 1.5em;
+
+  & > .chart {
+    border-bottom: 1px solid var(--Soft-red);
+    margin-top: 2em;
+    padding-bottom: 2.5em;
+    min-height: 10em;
+    position: relative;
+
+    @media (min-width: 40em) {
+      margin-top: 3em;
+      min-height: 7em;
+    }
+  }
+
+  .day {
+    width: 1.7em;
+
+    @media (min-width: 40em) {
+      width: 2em;
+    }
+  }
+
+  .block {
+    background: var(--Soft-red);
+    border-radius: 0.25em;
+    cursor: pointer;
+
+    &::before {
+      content: attr(data-expense);
+      color: var(--Very-pale-orange);
+      background: var(--Dark-brown);
+      border-radius: 0.5em;
+      line-height: 1;
+      text-align: center;
+      font-size: 0.5rem;
+      font-weight: var(--fw-700);
+      margin-inline: -0.5em;
+      padding: 1em 0.5em;
+      display: block;
+      translate: 0 -125%;
+      scale: 0;
+      transition: scale 200ms ease-in-out;
+    }
+
+    &:hover::before {
+      scale: 1;
+    }
+
+    @media (min-width: 40em) {
+      &::before {
+        font-size: 0.75rem;
+        padding: 0.85em 0.5em;
+        min-width: fit-content;
+      }
+    }
+  }
+
+  .day_name {
+    color: var(--Soft-red);
+    font-size: 0.85rem;
+    position: absolute;
+    translate: 0 175%;
+  }
+}
+
+.chart-title {
+  color: var(--Dark-brown);
+  font-size: 1.25rem;
+  font-weight: var(--fw-700);
+}
+
+.chart-footer {
+  .left_title,
+  .difference {
+    color: var(--Soft-red);
+    font-size: 0.85rem;
+  }
+
+  .left_balance,
+  .right_percent {
+    color: var(--Dark-brown);
+    font-weight: var(--fw-700);
+  }
+
+  .left_balance {
+    font-size: 1.5rem;
+  }
+
+  .right_percent {
+    font-size: 0.85rem;
+  }
+}
